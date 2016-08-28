@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>css文字加工</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .vintage1 {
+            background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAHklEQVQImWNkYGBgYGD4//8/A5wF5SBYyAr+//8PAPOCFO0Q2zq7AAAAAElFTkSuQmCC) repeat;
+            text-shadow: 5px -5px black, 4px -4px white;
+            font-weight: bold;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .vintage2 {
+            color: transparent;
+            -webkit-text-stroke: 1px red;
+            letter-spacing: 0.04em;
+        }
+
+        .vintage3 {
+            color: transparent;
+            background-color: blue;
+            text-shadow: rgba(255, 255, 255, 0.5) 0 5px 6px, rgba(255, 255, 255, 0.2) 1px 3px 3px;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .vintage4 {
+            color: gold;
+            letter-spacing: 0;
+            text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+        }
+
+        .vintage5 {
+            font-family: cursive;
+            text-shadow: 6px 2px 2px #333;
+            color: deeppink
+        }
+
+        .text-reflect-base {
+            color: palegreen;
+            -webkit-box-reflect: below 10px;
+        }
+
+        .text {
+            position: absolute;
+            left: 50%;
+            margin-left: -150px;
+            width: 300px;
+            font-size: 35px;
+            background-image: -webkit-linear-gradient(left, blue, #66ffff, #cc00ff, #CC00CC, #CCCCFF, #00FFFF, #CCCCFF, #CC00CC, #CC00FF, #66FFFF, blue);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 200% 100%;
+            animation: masked-animation 4s linear infinite;
+        }
+
+        .box_shadow {
+            width: 300px;
+            height: 200px;
+            box-shadow: 0 0 20px red, 0 0 20px yellow, 0 0 20px bisque;
+        }
+
+        @keyframes masked-animation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -100% 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="vintage1">CSS的魅力</h1>
+    <h1 class="vintage2">CSS的魅力</h1>
+    <h1 class="vintage3">CSS的魅力</h1>
+    <h1 class="vintage4">CSS的魅力</h1>
+    <h1 class="vintage5">CSS的魅力</h1>
+    <h1 class='text-reflect-base'>CSS的魅力</h1>
+    <div class="text">
+        <p>CSS的魅力</p>
+    </div>
+    <div class='box_shadow'>box-shadow</div>
+</body>
+
+</html>
