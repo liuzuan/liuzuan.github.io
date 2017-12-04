@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    span{
+      display:block;
+      width: 200px;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      font-size: 30px;
+      background-color: pink;
+      color: blue;
+      font-weight: bold;
+      border: 1px solid gold;
+    }
+  </style>
+</head>
+<body>
+  <span></span>
+  <button>抽奖</button>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+  var arr = ["一等奖￥1000","二等奖￥500","三等奖￥300","参与奖￥100","谢谢惠顾！"];
+  var a = 1,b = 2,c = 3,d = 20;
+  $("button").click(function(){
+    var num = Math.ceil(Math.random()*100);
+    var jiang = "";
+    if(num == 1){
+      jiang = arr[0];
+      a = a - 1;
+      if(a = 0){arr[0]=arr[4]};
+    }else if(num>1&&num<=3){
+      jiang == arr[1];
+      b = b - 1;
+      if(b = 0){arr[1]=arr[4]};
+    }else if(num>3&&num<=6){
+      jiang = arr[2];
+      c = c - 1;
+      if(c = 0){arr[2]=arr[4]};
+    }else if(num>6&&num<=26){
+      jiang = arr[3];
+      d = d - 1;
+      if(d = 0){arr[3]=arr[4]};
+    }else{
+      jiang = arr[4]
+    }
+    $("span").text(jiang)
+
+  })
+
+
+  </script>
+
+</body>
+</html>

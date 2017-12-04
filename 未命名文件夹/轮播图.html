@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js">
+  </script>
+  <script>
+  $(document).ready(function(){
+    $("li").click(function () {
+      var index = $(this).index()
+      $("img").eq(index).show();
+      $("img").eq(index).siblings().hide();
+
+    });
+  })
+
+  </script>
+  <style media="screen">
+    .box1{
+      width: 600px;
+      height: 400px;
+      margin: 0 auto;
+      overflow: hidden;
+
+    }
+    .img{
+      width: 600px;
+      height: 400px;
+
+
+    }
+    .box2{
+      position: relative;
+      display: flex;
+      height: 50px;
+      width: 400px;
+      margin: auto;
+      top: -50px;
+
+    }
+
+    li{
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: blue;
+      list-style: none;
+      margin: 0 auto;
+
+
+
+
+
+    }
+
+  </style>
+</head>
+<body>
+  <div class="contrnt">
+    <div class="box1">
+      <img src="未命名文件夹/images/1.jpg" class="img">
+      <img src="未命名文件夹/images/2.jpg" class="img">
+      <img src="未命名文件夹/images/3.jpg" class="img">
+      <img src="未命名文件夹/images/4.jpg" class="img">
+      <img src="未命名文件夹/images/5.jpg" class="img">
+
+    </div>
+
+    <ul class="box2">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+
+  </div>
+
+</body>
+</html>

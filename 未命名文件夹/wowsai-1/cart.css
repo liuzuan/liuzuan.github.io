@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+section {
+  width: 1200px;
+  height: auto;
+  margin: 100px auto;
+  font-size: 14px;
+  color: rgba(3, 3, 6, 0.74);
+}
+
+input {
+  cursor: pointer;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+}
+
+.thead {
+  width: 1200px;
+  height: 50px;
+  background-color: rgb(190, 239, 241);
+  border: 1px solid rgba(6, 27, 60, 0.27);
+}
+
+.thead ul li {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: rgba(3, 3, 6, 0.74);
+}
+
+.thead .list_check {
+  width: 180px;
+  margin-left: 10px;
+}
+
+.thead .list_price {
+  width: 205px;
+  height: auto;
+}
+
+.thead .list_amount {
+  width: 192px;
+  height: auto;
+}
+
+.thead .list_sum {
+  width: 195px;
+  height: auto;
+}
+
+.thead .list_goods {
+  width: 290px;
+  height: auto;
+}
+
+.cart_box {
+  width: 1200px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.goods_content {
+  width: 1200px;
+  height: auto;
+  border: 1px solid rgba(6, 27, 60, 0.27);
+  border-bottom: none;
+  margin-top: 10px;
+}
+
+.goods_content ul {
+  width: 1200px;
+  height: 130px;
+  border-bottom: 1px solid rgba(6, 27, 60, 0.27);
+}
+
+.goods_content ul li {
+  float: left;
+}
+
+.list_goods div {
+  float: left;
+}
+
+.list_img {
+  width: 90px;
+  height: 90px;
+  margin-top: 20px;
+}
+
+.list_text {
+  width: 230px;
+  height: 40px;
+  margin-top: 45px;
+  margin-left: 10px;
+}
+
+.all_check {
+  margin-left: 10px;
+}
+
+.goods_content .list_check {
+  width: 14px;
+  height: 14px;
+  margin: 58px 18px 58px 32px;
+}
+
+.goods_content .list_text a {
+  color: rgba(3, 3, 6, 0.74);
+}
+
+.goods_content .list_price {
+  font-size: 20px;
+  font-weight: 700;
+  color: red;
+  width: 200px;
+  height: 20px;
+  margin-top: 55px;
+}
+
+.goods_content .list_amount {
+  width: 200px;
+  height: auto;
+}
+
+.reduce,
+.add,
+.num {
+  float: left;
+  margin-top: 52px;
+  height: 25px;
+  display: block;
+  line-height: 25px;
+  text-align: center;
+}
+
+.num {
+  cursor: auto;
+  width: 41px;
+  border: 1px solid rgb(154, 154, 154);
+  outline: none;
+}
+
+.reduce,
+.add {
+  cursor: pointer;
+  width: 19px;
+  margin-top: 52px;
+  background-color: rgb(236, 236, 236);
+  border: 1px solid rgb(223, 223, 223);
+}
+
+.add:hover {
+  border: 1px solid cadetblue;
+}
+
+.reduce:hover {
+  border: 1px solid cadetblue;
+}
+
+.goods_content .list_sum {
+  font-size: 20px;
+  font-weight: 700;
+  color: red;
+  width: 190px;
+  height: 20px;
+  margin-top: 52px;
+}
+
+.goods_content .list_op {
+  height: 20px;
+  width: 100px;
+  margin-top: 52px;
+  cursor: pointer;
+}
+
+.goods_content .list_op:hover {
+  color: red;
+}
+
+.goods_content .list_goods {
+  width: 400px;
+}
+
+.footer {
+  width: 1200px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: rgb(190, 239, 241);
+  border: 1px solid rgba(6, 27, 60, 0.27);
+}
+
+.footer li {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+}
+
+.footer .list_check {
+  width: 100px;
+  margin-left: 10px;
+}
+
+#deleteAll {
+  width: 552px;
+}
+
+#deleteAll span {
+  cursor: pointer;
+}
+
+#deleteAll span:hover {
+  color: red;
+  
+}
+
+.selected {
+  width: 175px;
+}
+
+.total {
+  width: 230px;
+}
+
+#selectedTotal,
+#priceTotal {
+  font-size: 20px;
+  font-weight: 700;
+  color: red;
+}
+
+.sumTotal {
+  cursor: pointer;
+  border-left: 1px solid rgba(6, 27, 60, 0.27);
+  width: 132px;
+  text-align: center;
+}

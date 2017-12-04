@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="cart.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/buycart.jq.js"></script>
+	<title>购物车</title>
+</head>
+
+<body>
+	<section>
+		<div class="thead">
+			<ul>
+				<li class="list_check">
+					<input type="checkbox" class="check_all check"> 全选
+				</li>
+				<li class="list_goods">商品信息</li>
+				<li class="list_price">单价</li>
+				<li class="list_amount">数量</li>
+				<li class="list_sum">金额</li>
+				<li class="list_op">操作</li>
+			</ul>
+		</div>
+		<div class="cart_box">
+			<!-- 店铺1   -->
+			<div class="shop">
+				<div class="all_check">
+					<input type="checkbox" class="check_shop check">
+					<span>店铺</span>
+				</div>
+			</div>
+			<div class="goods_content">
+				<ul class="goods_list">
+					<!-- 商品1 -->
+					<li class="list_check">
+						<input type="checkbox" class="check check_goods">
+					</li>
+					<li class="list_goods">
+						<div class="list_img">
+							<img src="images/1.png" alt="">
+						</div>
+						<div class="list_text">
+							<a href="">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+						</div>
+					</li>
+					<li class="list_price">980.00</li>
+					<li class="list_amount">
+						<span class="reduce"></span>
+						<input type="text" class="num" value="1">
+						<span class="add">+</span>
+					</li>
+					<li class="list_sum">980.00</li>
+					<li class="list_op" id="delete">除移该商品</li>
+				</ul>
+				<ul class="goods_list">
+					<!-- 商品2 -->
+					<li class="list_check">
+						<input type="checkbox" class="check check_goods">
+					</li>
+					<li class="list_goods">
+						<div class="list_img">
+							<img src="images/2.png" alt="">
+						</div>
+						<div class="list_text">
+							<a href="">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+						</div>
+					</li>
+					<li class="list_price">65.99</li>
+					<li class="list_amount">
+						<span class="reduce"></span>
+						<input type="text" class="num" value="1">
+						<span class="add">+</span>
+					</li>
+					<li class="list_sum">65.99</li>
+					<li class="list_op" id="delete">除移该商品</li>
+				</ul>
+				<ul class="goods_list">
+					<!-- 商品3 -->
+					<li class="list_check">
+						<input type="checkbox" class="check check_goods">
+					</li>
+					<li class="list_goods">
+						<div class="list_img">
+							<img src="images/3.png" alt="">
+						</div>
+						<div class="list_text">
+							<a href="">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+						</div>
+					</li>
+					<li class="list_price">789.50</li>
+					<li class="list_amount">
+						<span class="reduce"></span>
+						<input type="text" class="num" value="1">
+						<span class="add">+</span>
+					</li>
+					<li class="list_sum">789.50</li>
+					<li class="list_op" id="delete">除移该商品</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cart_box">
+			<!-- 店铺2   -->
+			<div class="shop">
+				<div class="all_check">
+					<input type="checkbox" class="check_shop check">
+					<span>店铺</span>
+				</div>
+			</div>
+			<div class="goods_content">
+				<ul class="goods_list">
+					<!-- 商品1 -->
+					<li class="list_check">
+						<input type="checkbox" class="check check_goods">
+					</li>
+					<li class="list_goods">
+						<div class="list_img">
+							<img src="images/4.png" alt="">
+						</div>
+						<div class="list_text">
+							<a href="">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+						</div>
+					</li>
+					<li class="list_price">34.77</li>
+					<li class="list_amount">
+						<span class="reduce"></span>
+						<input type="text" class="num" value="1">
+						<span class="add">+</span>
+					</li>
+					<li class="list_sum">34.77</li>
+					<li class="list_op" id="delete">除移该商品</li>
+				</ul>
+				<ul class="goods_list">
+					<!-- 商品2 -->
+					<li class="list_check">
+						<input type="checkbox" class="check check_goods">
+					</li>
+					<li class="list_goods">
+						<div class="list_img">
+							<img src="images/5.png" alt="">
+						</div>
+						<div class="list_text">
+							<a href="">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a>
+						</div>
+					</li>
+					<li class="list_price">567.87</li>
+					<li class="list_amount">
+						<span class="reduce"></span>
+						<input type="text" class="num" value="1">
+						<span class="add">+</span>
+					</li>
+					<li class="list_sum">567.87</li>
+					<li class="list_op" id="delete">除移该商品</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer">
+			<ul>
+				<li class="list_check">
+					<input type="checkbox" class="check_all check"> 全选
+				</li>
+				<li id="deleteAll">
+					<span class="deleteAll">除移选中商品</span>
+				</li>
+				<li class="selected">
+					已选商品
+					<span id="selectedTotal">0</span>
+					件
+				</li>
+				<li class="total">
+					共计：
+					<span id="priceTotal">0.00</span>
+				</li>
+				<li class="sumTotal" id="sumTotal">结算</li>
+			</ul>
+		</div>
+	</section>
+
+</body>
+
+</html>

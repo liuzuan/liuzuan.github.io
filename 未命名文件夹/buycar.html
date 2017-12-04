@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <title>购物车</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      text-decoration: none;
+      color: black;
+    }
+
+    table {
+
+      width: 1000px;
+      height: auto;
+      border-collapse: collapse;
+      margin: 100px auto 0 auto;
+      border: 1px solid #a8a8a8;
+    }
+
+    td {
+      height: 60px;
+      border-top: 1px solid #a8a8a8;
+      padding: 10px;
+      background-color: rgb(237, 245, 255);
+      text-align: center;
+      vertical-align: middle;
+
+    }
+
+    th {
+      height: 40px;
+      padding: 10px;
+      background-color: rgb(225, 241, 255);
+    }
+
+    .count_input {
+      text-align: center;
+      width: 32px;
+      height: 22px;
+      border: 1px solid #a8a8a8;
+    }
+
+    .count span {
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      line-height: 9px;
+      border: 1px solid #a8a8a8;
+      background: white;
+      cursor: pointer;
+    }
+
+    .check {
+      border: 2px solid #a8a8a8;
+    }
+
+    .delete {
+      cursor: pointer;
+    }
+
+    .foot {
+      width: 1000px;
+      height: 60px;
+      line-height: 60px;
+      background: rgb(218, 237, 255);
+      border: 1px solid #a8a8a8;
+      margin: 20px auto;
+    }
+
+    .fl {
+      margin-left: 40px;
+      float: left;
+    }
+
+    .fr {
+      margin-right: 40px;
+      float: right;
+    }
+
+    .closing {
+      width: 100px;
+      margin: 0;
+      text-align: center;
+      border-left: 1px solid #a8a8a8;
+      cursor: pointer;
+
+    }
+
+    #priceTotal,
+    #selectedTotal {
+      color: red;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <table id="cartTable">
+    <thead>
+      <tr>
+        <th><label><input type="checkbox" class="check_all check">&nbsp;全选</label></th>
+        <th>商品</th>
+        <th>单价</th>
+        <th>数量</th>
+        <th>小计</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="checkbox"><input type="checkbox" class="check_one check"></td>
+        <td class="goods"><img src="http://www.wowsai.com/data/files/store_290567/goods_194/ssmall_201409251659547274.jpg" alt=""><span>皮包</span></td>
+        <td class="price">850.88</td>
+        <td class="count">
+          <span class="reduce"></span>
+          <input type="text" class="count_input" value="1">
+          <span class="add">+</span>
+        </td>
+        <td class="subtotal">850.88</td>
+        <td class="operation"> <span class="delete">删除</span> </td>
+      </tr>
+
+
+      <tr>
+        <td class="checkbox"><input type="checkbox" class="check_one check"></td>
+        <td class="goods"><img src="http://www.wowsai.com/data/files/store_965049/goods_152/ssmall_201708242332328191.jpeg" alt=""><span>名片包</span></td>
+        <td class="price">66.00</td>
+        <td class="count">
+          <span class="reduce"></span>
+          <input type="text" class="count_input" value="1">
+          <span class="add">+</span>
+        </td>
+        <td class="subtotal">66.00</td>
+        <td class="operation"> <span class="delete">删除</span> </td>
+      </tr>
+
+
+      <tr>
+        <td class="checkbox"><input type="checkbox" class="check_one check"></td>
+        <td class="goods"><img src="http://www.wowsai.com/data/files/store_5079/goods_120/ssmall_201311291702002886.jpg" alt=""><span>书签</span></td>
+        <td class="price">99.00</td>
+        <td class="count">
+          <span class="reduce"></span>
+          <input type="text" class="count_input" value="1">
+          <span class="add">+</span>
+        </td>
+        <td class="subtotal">99.00</td>
+        <td class="operation"> <span class="delete">删除</span> </td>
+      </tr>
+
+
+      <tr>
+        <td class="checkbox"><input type="checkbox" class="check_one check"></td>
+        <td class="goods"><img src="http://www.wowsai.com/data/files/store_291037/goods_171/ssmall_201212281352511743.jpg" alt=""><span>吊坠</span></td>
+        <td class="price">1650.00</td>
+        <td class="count">
+          <span class="reduce"></span>
+          <input type="text" class="count_input" value="1">
+          <span class="add">+</span>
+        </td>
+        <td class="subtotal">1650.00</td>
+        <td class="operation"> <span class="delete">删除</span> </td>
+      </tr>
+
+    </tbody>
+
+
+  </table>
+  <div class="foot" id="foot">
+    <label class="fl select_all"><input type="checkbox" class="check_all check">&nbsp;全选</label>
+    <a class="fl delete" id="deleteAll" href="javascript:;">删除选中</a>
+    <div class="fr closing">结算</div>
+    <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+    <div class="fr selected" id="selected">已选商品
+      <span id="selectedTotal">0</span>件
+    </div>
+
+  </div>
+  <script type="text/javascript">
+    var cartTable = document.getElementById("cartTable");
+    var tr = cartTable.children[1].rows;
+    var checkInputs = document.getElementsByClassName("check");
+    var checkAllInputs = document.getElementsByClassName("check_all");
+    var selectedTotal = document.getElementById("selectedTotal");
+    var priceTotal = document.getElementById("priceTotal");
+    var deleteAll = document.getElementById("deleteAll");
+    console.log(tr);
+
+    //计算
+    function getTotala() {
+      var selected = 0;
+      var price = 0;
+      for (var i = 0; i < tr.length; i++) {
+        if (tr[i].getElementsByTagName("input")[0].checked) {
+          selected += parseInt(tr[i].getElementsByTagName("input")[1].value);
+          price += parseFloat(tr[i].cells[4].innerHTML);
+        }
+      }
+      selectedTotal.innerHTML = selected;
+      priceTotal.innerHTML = price.toFixed(2);
+    }
+    for (var i = 0; i < checkInputs.length; i++) {
+      checkInputs[i].onclick = function() {
+        if (this.className === "check_all check") {
+          for (var j = 0; j < checkInputs.length; j++) {
+            checkInputs[j].checked = this.checked;
+          }
+        }
+        if (this.checked == false) {
+          for (var k = 0; k < checkAllInputs.length; k++) {
+            checkAllInputs[k].checked = false;
+          }
+        }
+        getTotala()
+      }
+    }
+    //小计
+    function getSubTotal(tr) {
+      var price = parseFloat(tr.cells[2].innerHTML);
+      var count = parseInt(tr.getElementsByTagName("input")[1].value);
+      var subTotal = parseFloat(price * count);
+      tr.cells[4].innerHTML = subTotal.toFixed(2);
+    }
+
+    for (var i = 0; i < tr.length; i++) { //按钮加减
+      tr[i].onclick = function(e) {
+        e = e || window.event;
+        var el = e.srcElement;
+        var cls = el.className;
+        var reduce = this.getElementsByTagName("span")[1];
+        var num = this.getElementsByTagName("input")[1];
+        var val = parseInt(num.value);
+        switch (cls) {
+          case "add":
+            num.value = val + 1;
+            reduce.innerHTML = "-";
+            getSubTotal(this);
+            break;
+          case "reduce":
+            if (val > 1) {
+              num.value = val - 1;
+            }
+            if (num.value <= 1) {
+              reduce.innerHTML = "";
+            }
+            getSubTotal(this);
+            break;
+          case "delete":
+            var conf = confirm("确定要删除该商品吗？");
+            if (conf) {
+              this.parentNode.removeChild(this);
+              break;
+            }
+          default:
+        }
+        getTotala();
+      }
+      tr[i].getElementsByTagName("input")[1].onkeyup = function() {
+        var val = this.value;
+        var tr = this.parentNode.parentNode;
+        var reduce = tr.getElementsByTagName("span")[1];
+        if (isNaN(val) || val < 1) {
+          val = 1;
+
+        }
+        this.value = val;
+        if (val <= 1) {
+          reduce.innerHTML = ""
+        } else {
+          reduce.innerHTML = "-";
+        }
+        getSubTotal(tr);
+        getTotala();
+
+      }
+    }
+    deleteAll.onclick = function() {
+      if (selectedTotal.innerHTML != "0") {
+        var conf = confirm("确定要删除选中的商品吗？");
+        if (conf) {
+          for (var i = 0; i < tr.length; i++) {
+            var input = tr[i].getElementsByTagName("input")[0];
+            if (input.checked) {
+              tr[i].parentNode.removeChild(tr[i]);
+              i--;
+            }
+          }
+        }
+      }
+    }
+    checkAllInputs[0].checked = true;
+    checkAllInputs[0].onclick();
+  </script>
+
+
+
+
+</body>
+
+</html>
