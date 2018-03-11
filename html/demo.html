@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <input class="input" type="button" value="按钮1">
+  <input class="input" type="button" value="按钮2">
+  <input class="input" type="button" value="按钮3">
+  <script type="text/javascript">
+    // console.log(Boolean([]))
+    // console.log([] == false)
+    // console.log(![])
+    console.log(window)
+    
+    // let arr1 = new Array(4).fill(2)
+    // let arr2 = arr1.map(k => {
+    //   return k += 1
+    // })
+    // console.log(arr2)
+
+    // 乱序
+    // function shuffle(arr) {
+    //   let i = arr.length;
+    //   while (i) {
+    //     let j = Math.floor(Math.random() * i--);
+    //     [arr[j], arr[i]] = [arr[i], arr[j]];
+    //   }
+    //   return arr
+    // }
+    // console.log(shuffle([3,2,4,1]))
+
+
+    // 冒泡排序
+    // function bubbleSort(arr) {
+    //   let i = arr.length - 1;
+    //   while (i) {
+    //     for (let j = 0; j < i; j++) {
+    //       if (arr[j] > arr[j + 1]) {
+    //         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+    //       }
+    //     }
+    //     i--
+    //   }
+    //   return arr
+    // }
+    // console.log(bubbleSort([2, 4, 6, 80, 100, 5, 0]))
+
+
+    // 选择排序
+
+
+    // function pand(x) {
+    //   console.log(x === x)
+    // }
+    // pand()
+
+    // function context() {
+    //   console.log(typeof foo)
+    //   var bar = function() {
+    //     return 'abc'
+    //   }
+    //   function foo() {
+    //     return 'bcd'
+    //   }
+    //   var foo = 1;
+    //   console.log(typeof foo)
+    // }
+    // context()
+
+    // var btns = document.getElementsByTagName("input");
+    // var i =0 
+    // var j;
+    // for(; i < 3; i++) {
+    //   j =i
+    //   console.log(j)
+    //   // btns[i].index = i + 1
+    //   btns[j].onclick = function() {
+    //     console.log('我是第' + j + '个按钮')
+    //   };
+    // }
+    // console.log(j)
+
+    // setTimeout(console.log, 1000, '456');
+    // setTimeout(() => console.log('123'), 1000);
+    // setTimeout(console.log('789'), 1000);
+
+    // for (var i = 0, arr = []; i < 3; i++) {
+    //   arr.push((function(prop){
+    //     return function() {
+    //       console.log(prop)
+    //     }
+    //   })(i))
+    // }
+    // arr[0]()
+    // arr[1]()
+    // arr[2]()
+
+    // function test() {
+    //   var foo = 33;
+    //   if(true) {
+    //     let foo = (foo + 55); // ReferenceError
+    //   }
+    // }
+    // test();
+
+
+    // class Point {
+    //   constructor() {
+    //     this.a = 1
+    //   }
+    //   giveMoney() {
+    //     console.log(this.a)
+    //   }
+    // }
+
+    // class Son extends Point {
+    //   constructor() {
+    //     super()
+    //   }
+    // }
+
+    // let son1 = new Son()
+    // console.log(son1)
+    // 
+    // 
+
+    //虽然test()函数被嵌套在obj.foo()函数中，但test()函数是独立调用，而不是方法调用。所以this默认绑定到window
+    // var a = 0;
+    // var obj = {
+    //   a: 2,
+    //   foo: function () {
+    //     // let a = 1
+    //     console.log(this.a)
+    //     function test() {
+    //       console.log(this.a);
+    //     }
+    //     test();
+    //   }
+    // }
+    // obj.foo();//0
+
+    // function Father(name, age) {
+    //   this.name = name;
+    //   this.age = age;
+
+    // }
+    // function Son(name, age, sex) {
+    //   this.sex = sex;
+    //   Father.call(this, name, age);
+    // }
+    // Son.prototype = new Father();
+    // var son1 = new Son('刘亦菲', 30, '美女');
+    // var son2 = new Son('刘德华', 50, '帅哥');
+    // console.dir(son1);
+    // console.dir(son2);
+
+
+
+    // function step1(resolve, reject) {
+    //   console.log('1.开始，洗菜做饭');
+    //   if(state == 1) {
+    //     resolve('洗菜做饭完成')
+    //   } else {
+    //     reject('洗菜做饭错误')
+    //   }
+    // }
+
+    // let state = 2
+
+    // function step2(resolve, reject) {
+    //   console.log('2.开始，坐下来吃饭');
+    //   if(state == 1) {
+    //     resolve('坐下来吃饭完成')
+    //   } else {
+    //     reject('坐下来吃饭错误')
+    //   }
+    // }
+
+    // function step3(resolve, reject) {
+    //   console.log('3.开始，收拾桌子洗碗');
+    //   if(state == 1) {
+    //     resolve('收拾桌子洗碗完成')
+    //   } else {
+    //     reject('收拾桌子洗碗错误')
+    //   }
+    // }
+
+    // new Promise(step1).then(
+    //   function(val) {
+    //     console.log(val);
+    //     return new Promise(step2)
+    //   }
+    // ).then(
+    //   function(val) {
+    //     console.log(val);
+    //     return new Promise(step3)
+    //   }
+    // ).then(
+    //   function(val) {
+    //     console.log(val);
+    //   }
+    // )
+
+
+    // var p = new Promise((resolve, reject) => {
+    //     setTimeout(reject, 2000)
+    //   })
+    //   .then(() => setTimeout(function() {
+    //     console.log(22)
+    //   }, 2000), () => setTimeout(function() {
+    //     console.log(11)
+    //   }, 2000))
+
+
+
+    // function quickSort(arr) {
+    //   if(arr.length < 1) return arr;
+    //   let mid = Math.floor(arr.length / 2)
+    //   let midValue = arr.splice(mid, 1)
+    //   let left = []
+    //   let right = []
+    //   for(let i of arr) {
+    //     if(i < midValue) {
+    //       left.push(i)
+    //     } else {
+    //       right.push(i)
+    //     }
+    //   }
+    //   return quickSort(left).concat(midValue, quickSort(right))
+    // }
+    // console.log(quickSort([2, 5, 7, 3, 1, 5, 8, 3, 9, 2, 0]))
+    // 
+    // 
+
+    // function test() {
+    //   for (let i = 0; i < 5; i++) {
+    //     setTimeout(() => {
+    //       console.log(i)
+    //     })
+    //   }
+    // }
+    // test()
+
+
+    // for(var i = 0; i < 3; i++) {
+    //   setTimeout(function() {
+    //     console.log(i);
+    //   }, 1000);
+    // }
+    // console.log(i)
+
+    // console.log(1&&0&&2)
+    // console.log(1&&2&&3)
+    // console.log(1||0&&2)
+    // console.log(0&&1||3||2)
+
+
+    // var x = 10;
+
+    // function fn() {
+    //   console.log(x);
+    // }
+    // function f() {
+    //   var x = 5;
+    //   console.log(x);
+    // }
+
+    // function show(f) {
+    //   var x = 20;
+    //   (function () {
+    //     var x = 1;
+    //     f();
+    //   })();
+    // }
+    // show(fn)
+    // show(f)
+
+
+    // let obj = {
+    //   x: 10,
+    //   fn: function (){
+    //     console.log(this)
+    //     // console.log(this.x)
+
+    //   }
+    // }
+    // let a = obj.fn
+    // a()
+    // obj.fn()
+
+    // function Point(name, age) {
+    //   this.name = name
+    //   this.age = age
+    //   this.fn = function () {
+    //     console.log(this)
+    //   }
+    //   if (typeof this.eat !== 'function') {
+    //     Point.prototype.eat = function (food) {
+    //       console.log(this.age + '岁的' + this.name + '在吃' + food)
+    //     };
+    //   }
+    // }
+    // let p1 = new Point('刘祖安', 25)
+    // let p2 = new Point('小怪兽', 3)
+    // p1.fn()
+    // p1.eat('橘子')
+    // p2.eat('苹果')
+
+
+    // class Point {
+    //   constructor( name, age ) {
+    //     this.name = name
+    //     this.age = age
+    //   }
+    //   eat(food) {
+    //     console.log( this.age + '岁的' + this.name + '在吃' + food )
+    //   }
+    // }
+    // let p1 = new Point( '刘祖安', 25 )
+    // let p2 = new Point( '小怪兽', 3 )
+    // p1.eat( '橘子' )
+    // p2.eat( '苹果' )
+    // console.log(p1)
+
+
+    // var o1 = {}; 
+    // var o2 = new Object();
+    // var o3 = new f1();
+
+    // function f1() {};
+    // var f2 = function () {};
+    // var f3 = new Function( 'str', 'console.log(str)' );
+
+    // console.log( typeof Object ); //function 
+    // console.log( typeof Function ); //function  
+
+    // console.log( typeof f1 ); //function 
+    // console.log( typeof f2 ); //function 
+    // console.log( typeof f3 ); //function   
+
+    // console.log( typeof o1 ); //object 
+    // console.log( typeof o2 ); //object 
+    // console.log( typeof o3 ); //object
+    
+  </script>
+</body>
+
+</html>
