@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js">
-  </script>
-  <script>
-  $(document).ready(function(){
-    $("li").click(function () {
-      var index = $(this).index()
-      $("img").eq(index).show();
-      $("img").eq(index).siblings().hide();
-
-    });
-  })
-
-  </script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <style media="screen">
-    .box1{
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .slider {
+      position: relative;
       width: 600px;
       height: 400px;
       margin: 0 auto;
       overflow: hidden;
 
     }
-    .img{
+
+    .img {
+      display: none;
       width: 600px;
       height: 400px;
-
-
     }
-    .box2{
-      position: relative;
+
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 600px;
       display: flex;
-      height: 50px;
-      width: 400px;
-      margin: auto;
-      top: -50px;
-
+      justify-content: center;
     }
 
-    li{
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      background-color: blue;
+    .active {
+      background: #fff;
+    }
+
+    li {
+      width: 20px;
+      height: 5px;
+      background-color: #ccc;
       list-style: none;
-      margin: 0 auto;
-
-
-
-
-
+      margin: 0 5px;
     }
-
   </style>
 </head>
+
 <body>
-  <div class="contrnt">
-    <div class="box1">
-      <img src="未命名文件夹/images/1.jpg" class="img">
-      <img src="未命名文件夹/images/2.jpg" class="img">
-      <img src="未命名文件夹/images/3.jpg" class="img">
-      <img src="未命名文件夹/images/4.jpg" class="img">
-      <img src="未命名文件夹/images/5.jpg" class="img">
-
+  <div class="slider">
+    <div class="sliderPanel">
+      <img src="../resume/media/art01.0e69537f.jpg" class="img">
+      <img src="../resume/media/art02.134691d0.jpg" class="img">
+      <img src="../resume/media/art03.c01cecaa.jpg" class="img">
+      <img src="../resume/media/art04.599b61e9.jpg" class="img">
+      <img src="../resume/media/art05.92a1c251.jpg" class="img">
     </div>
-
-    <ul class="box2">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+    <div class="arrows">
+      <div class="arrow prev"></div>
+      <div class="arrow next"></div>
+    </div>
+    <ul class="dots">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
-
-
-
   </div>
 
+  <script>
+    let img = $('.img');
+    let dot = $('li');
+    let index = 0;
+    let length = img.length
+    let timer = setInterval(next, 2000);
+    img.eq(index).show();
+    dot.eq(index).addClass('active');
+    
+    function prev() {
+      let prevIndex = index;
+      index = (--index + length) % length;
+      play(prevIndex, index)
+    }
+
+    function next() {
+      let prevIndex = index;
+      index = (++index + length) % length;
+      play(prevIndex, index)
+    }
+
+    function play(prevIndex, index) {
+
+    }
+  </script>
+
+
 </body>
+
 </html>
