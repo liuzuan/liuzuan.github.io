@@ -63,8 +63,9 @@
   <div class="box box3 panel"></div>
   <div class="box">我是三号说明文</div>
   <script type="text/javascript">
+    // alert(document.documentElement.scrollTop)
     let panel = document.getElementsByClassName('panel')
-    let clientHeight = document.documentElement.clientHeight || document.body.scrollTop;
+    let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
     // console.dir(document)
     function position() {
       for (let i of panel) {
