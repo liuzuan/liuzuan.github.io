@@ -72,7 +72,6 @@
         let panel_scroll = document.documentElement.scrollTop || document.body.scrollTop;
         let panel_dom = i.offsetTop
         let panel_win = panel_dom - panel_scroll
-
         if (-i.offsetHeight < panel_win && panel_win < clientHeight) {
           i.style.backgroundPositionY = (30 / clientHeight) * panel_win + 'px';
         }

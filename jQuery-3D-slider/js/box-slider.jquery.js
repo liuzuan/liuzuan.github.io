@@ -256,7 +256,7 @@
     // call the slide animation
     $.extend(settings, settings.slideAnimator.transition($.extend({
         $box: $box
-      , $slides: $slides
+      , $slides: $slidesƒ
       , $currSlide: $currSlide
       , $nextSlide: $nextSlide
       , reverse: reverse
