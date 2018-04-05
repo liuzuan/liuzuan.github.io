@@ -63,23 +63,24 @@
   <div class="box box3 panel"></div>
   <div class="box">我是三号说明文</div>
   <script type="text/javascript">
-    // alert(document.documentElement.scrollTop)
-    let panel = document.getElementsByClassName('panel')
-    let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-    // console.dir(document)
-    function position() {
-      for (let i of panel) {
-        let panel_scroll = document.documentElement.scrollTop || document.body.scrollTop;
-        let panel_dom = i.offsetTop
-        let panel_win = panel_dom - panel_scroll
-        if (-i.offsetHeight < panel_win && panel_win < clientHeight) {
-          i.style.backgroundPositionY = (30 / clientHeight) * panel_win + 'px';
-        }
-      }
-    }
-    position()
-    window.onscroll = position
-    // window.addEventListener('scroll', position);
+    // // alert(document.documentElement.scrollTop)
+    // let panel = document.getElementsByClassName('panel')
+    // let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+    // // console.dir(document)
+    // function position() {
+    //   for (let i of panel) {
+    //     let panel_scroll = document.documentElement.scrollTop || document.body.scrollTop;
+    //     let panel_dom = i.offsetTop
+    //     let panel_win = panel_dom - panel_scroll
+    //     if (-i.offsetHeight < panel_win && panel_win < clientHeight) {
+    //       i.style.backgroundPositionY = (30 / clientHeight) * panel_win + 'px';
+    //     }
+    //   }
+    // }
+    // position()
+    // window.onscroll = position
+    // // window.addEventListener('scroll', position);
+    
   </script>
 </body>
 
