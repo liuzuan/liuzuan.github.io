@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <title>纸张平铺覆盖效果</title>
+    <style>
+        body {
+            background: #f6f6f6;
+        }
+
+        .page {
+            position: absolute;
+            background: #fff;
+            z-index: -10;
+            box-shadow: 0px 0px 10px 2px rgba(200, 200, 200, 0.5);
+        }
+
+        .top_left {
+            width: 100%;
+            height: 250px;
+            left: 10px;
+            top: -20px;
+            transform: rotate(5deg)
+        }
+
+        .top_right {
+            width: 100%;
+            height: 250px;
+            right: 10px;
+            top: -20px;
+            transform: rotate(-5deg);
+        }
+
+        .main_page {
+            position: relative;
+            margin: 100px auto;
+            width: 800px;
+            height: 200vh;
+            background: #fff;
+            box-shadow: 0px 0px 10px 2px rgba(200, 200, 200, 0.5);
+        }
+
+        .bottom_left {
+            right: 10px;
+            bottom: -20px;
+            width: 100%;
+            height: 250px;
+            transform: rotate(5deg);
+        }
+
+        .bottom_right {
+            left: 10px;
+            bottom: -20px;
+            width: 100%;
+            height: 250px;
+            transform: rotate(-5deg);
+        }
+        article {
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_page">
+        <div class="top_left page"></div>
+        <div class="top_right page"></div>
+        <div class="bottom_left page"></div>
+        <div class="bottom_right page"></div>
+        <article>
+            纸张平铺覆盖效果
+        </article>
+    </div>
+</body>
+
+</html>

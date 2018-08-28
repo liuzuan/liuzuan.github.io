@@ -3,8 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
   <title>file</title>
   <style>
     * {
@@ -13,7 +15,7 @@
       padding: 0;
     }
 
-    div {
+    div:nth-of-type(1) {
       position: relative;
       width: 150px;
       height: 40px;
@@ -22,8 +24,13 @@
       background: cadetblue;
       color: #fff;
     }
+    div:nth-of-type(2) {
+      margin-top: 20px;
+      height: 20px;
+    }
 
     input {
+      cursor:pointer;
       position: absolute;
       top: 0;
       left: 0;
@@ -56,8 +63,7 @@
       width: 500px;
       height: auto;
       margin: 0 auto;
-      box-shadow: 0px 0px 10px rgb(56, 55, 55);
-
+      box-shadow: 0px 5px 10px #aaa;
     }
 
     img {
@@ -70,11 +76,18 @@
 
 <body>
   <div>
-    <input type="file" onchange="handleInput()">
+    <input type="file"
+           onchange="handleInput()">
     <span>选择文件</span>
   </div>
+  <div>
+    <progress value="0"
+              style='margin: 0 auto;display:block;'
+              max="100"></progress>
+  </div>
   <section class="cade">
-    <img src="" alt="">
+    <img src=""
+         alt="">
     <span class="file"></span>
   </section>
   <script>
@@ -83,10 +96,15 @@
       let show = document.getElementsByClassName('file')[0];
       let reader = new FileReader();
       let img = document.getElementsByTagName('img')[0];
+      let progress = 0;
       reader.readAsDataURL(file);
       show.innerHTML = `已选择：${file.name}`;
       reader.onload = function () {
         img.src = reader.result
+      }
+      reader.onprogress = (e) => {
+        progress = e.loaded / e.total * 100;
+        document.getElementsByTagName('progress')[0].value = progress;
       }
     }
   </script>
