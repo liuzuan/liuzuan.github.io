@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <link href="https://cdn.bootcss.com/pagePiling.js/1.5.5/jquery.pagepiling.min.css"
+          rel="stylesheet">
+    <title>滚动翻页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+        }
+
+        section:nth-of-type(1) {
+            background: teal
+        }
+
+        section:nth-of-type(2) {
+            background: aqua
+        }
+
+        section:nth-of-type(3) {
+            background: bisque
+        }
+
+        section:nth-of-type(4) {
+            background: chartreuse
+        }
+
+        aside {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            width: 20px;
+            transform: translateY(-50%)
+        }
+
+        aside ul,
+        aside li {
+            list-style-type: none;
+        }
+
+        aside li {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: #aaa;
+            margin: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        aside li:hover {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <section class="part1 section"></section>
+        <section class="part2 section"></section>
+        <section class="part3 section"></section>
+        <section class="part4 section"></section>
+    </main>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/pagePiling.js/1.5.5/jquery.pagepiling.min.js"></script>
+    <script>
+        $("#main").pagepiling({
+            loopBottom: true,
+            loopTop: true
+        })
+    </script>
+</body>
+
+</html>
