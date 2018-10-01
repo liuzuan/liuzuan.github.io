@@ -91,22 +91,10 @@
 
 <body>
     <div id="wrapper">
-        <h1>ZuAnn Liu</h1>
+        <h1>liuzuann</h1>
         <h2>A man who likes code, music &amp; fishing. &nbsp;</h2>
         <p>
             <a href="http://liuzuann.xyz/resume" target="_blank">Resume</a>
-        </p>
-        <p>
-            <a href="http://liuzuann.xyz/blog">Blog</a>
-        </p>
-        <p>
-            <a href="http://liuzuann.xyz/note" target="_blank">Note</a>
-        </p>
-        <p>
-            <a href="https://github.com/liuzuan" target="_blank">Github</a>
-        </p>
-        <!-- <p>
-            <a href="http://resume.liuzuann.com/" target="_blank">Resume</a>
         </p>
         <p>
             <a href="http://blog.liuzuann.com">Blog</a>
@@ -116,7 +104,7 @@
         </p>
         <p>
             <a href="https://github.com/liuzuan" target="_blank">Github</a>
-        </p> -->
+        </p>
     </div>
     <canvas></canvas>
     <script>
@@ -125,7 +113,7 @@
         })
         var c = document.getElementsByTagName('canvas')[0],
             x = c.getContext('2d'),
-            pr = window.devicePixelRatio || 1,
+            dpr = window.devicePixelRatio || 1,
             w = window.innerWidth,
             h = window.innerHeight,
             f = 90,
@@ -135,9 +123,9 @@
             u = m.PI * 2,
             v = m.cos,
             z = m.random
-        c.width = w * pr
-        c.height = h * pr
-        x.scale(pr, pr)
+        c.width = w * dpr
+        c.height = h * dpr
+        x.scale(dpr, dpr)
         x.globalAlpha = 0.6
         function i() {
             x.clearRect(0, 0, w, h)
