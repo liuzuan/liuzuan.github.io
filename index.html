@@ -16,9 +16,9 @@
             overflow: hidden;
             margin: 0;
         }
-        
+
         * {
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
 
         body {
@@ -152,8 +152,31 @@
             var t = p + (z() * 2 - 1.1) * f
             return (t > h || t < 0) ? y(p) : t
         }
-        document.onclick = i
-        document.ontouchstart = i
+        var os = (function () {
+            var ua = navigator.userAgent,
+                isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                isAndroid = /(?:Android)/.test(ua),
+                isFireFox = /(?:Firefox)/.test(ua),
+                isChrome = /(?:Chrome|CriOS)/.test(ua),
+                isTablet =
+                    /(?:iPad|PlayBook)/.test(ua) ||
+                    (isAndroid && !/(?:Mobile)/.test(ua)) ||
+                    (isFireFox && /(?:Tablet)/.test(ua)),
+                isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                isPc = !isPhone && !isAndroid && !isSymbian;
+            return {
+                isTablet: isTablet,
+                isPhone: isPhone,
+                isAndroid: isAndroid,
+                isPc: isPc
+            };
+        })();
+        if (os.isAndroid || os.isPhone || os.isTablet) {
+            document.ontouchstart = i
+        } else {
+            document.onclick = i
+        }
         i()
     </script>
 </body>
