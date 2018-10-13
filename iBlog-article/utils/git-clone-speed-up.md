@@ -43,3 +43,4 @@ sudo vim /etc/host
 ```
 
 至此，设置就完成了，下面就可以愉快的`git clone`了！亲测10k/s 变成 647k/s了！很帅有木有~~
+![](http://cdn.liuzuann.com/1651f57bcde_git_clone.png-thin)
