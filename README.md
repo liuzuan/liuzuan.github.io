@@ -1,5 +1,9 @@
 # 刘祖安的主页
 
+## [个人主页](http://www.liuzuann.com)
+
+## [个人博客](http://blog.liuzuann.com)
+
 ## 博客文章
 
 #### javaScript
