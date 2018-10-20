@@ -15,7 +15,7 @@
 
 1. [常用css选择器](./iBlog-article/css/css-selector.md)
 
-#### 其他
+#### 其他分类
 
 1. [使用github自动部署项目](./iBlog-article/utils/auto-pull.md)
 2. [git基本命令](./iBlog-article/utils/git-base.md)
