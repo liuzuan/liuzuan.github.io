@@ -9,6 +9,7 @@
 3. [原型与继承](./iBlog-article/javaScript/原型-继承.md)
 4. [执行上下文栈](./iBlog-article/javaScript/执行上下文栈.md)
 5. [排序算法](./iBlog-article/javaScript/排序算法.md)
+6. [理解async/await](./iBlog-article/javaScript/async-await.md)
 
 #### css
 
