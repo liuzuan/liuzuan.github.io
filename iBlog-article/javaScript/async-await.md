@@ -118,7 +118,7 @@ async function test() {
 test();
 ```
 
-眼尖的同学已经发现`takeLongTime()` 没有申明为 async。实际上，`takeLongTime()`本身就是返回的 `Promise` 对象，加不加 `async` 结果都一样，如果没明白，请回过头再去看看上面的`async` 起什么作用。
+可以发现`takeLongTime()` 没有申明为 async。实际上，`takeLongTime()`本身就是返回的 `Promise` 对象，加不加 `async` 结果都一样，如果没明白，请回过头再去看看上面的`async` 起什么作用。
 
 又一个疑问产生了，这两段代码，两种方式对异步调用的处理（实际就是对 `Promise` 对象的处理）差别并不明显，甚至使用 `async/await` 还需要多写一些代码，那它的优势到底在哪？
 
