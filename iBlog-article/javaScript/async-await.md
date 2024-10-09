@@ -2,10 +2,6 @@
 
 `async` 函数是 `Generator` 函数的语法糖，并且越来越多的人开始研究据说是异步编程终级解决方案的 `async/await`，那么它到底是怎么处理异步的呢，本文对此作了浅显易懂的阐述。
 
-# 说明
-
-> 本文摘自 [边城](https://segmentfault.com/u/jamesfancy)的[理解 JavaScript 的 async/await](https://segmentfault.com/a/1190000007535316)。在获得作者允许情况下作了转载。
-
 # async 和 await 在干什么
 
 任意一个名称都是有意义的，先从字面意思来理解。`async` 是“异步”的简写，而 `await` 可以认为是 `async wait` 的简写。所以应该很好理解 `async` 用于申明一个 `function` 是异步的，而 `await` 用于等待一个异步方法执行完成。
