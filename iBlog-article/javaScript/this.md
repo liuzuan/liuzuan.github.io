@@ -146,9 +146,9 @@ document.getElementById('foo').click();
 var obj = {
     x: 10,
     foo: function() {
-        var fn = () = {
-            return () = {
-                return () = {
+        var fn = () => {
+            return () => {
+                return () => {
                     console.log(this);      //Object {x: 10}
                     console.log(this.x);    //10
                 }
